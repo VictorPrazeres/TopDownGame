@@ -5,7 +5,7 @@ class_name MainMenu extends Control
 
 
 func _on_play_button_pressed() -> void:
-	pass
+	Transition.transition_to("res://Scenes/UI/CharacterSelection/character_selection.tscn")
 
 
 func _on_settings_button_pressed() -> void:
