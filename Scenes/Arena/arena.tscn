@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dheb1iulvcciu"]
+
+[ext_resource type="Texture2D" uid="uid://dy8e3xkc5qdbp" path="res://Sprites/Interface/Tilemap/tilemap_packed.png" id="1_fp5lk"]
+[ext_resource type="Texture2D" uid="uid://ccab6or5n1nai" path="res://Sprites/Players/tile_0000.png" id="2_6o3nl"]
+[ext_resource type="Texture2D" uid="uid://dxp7naqy4gvku" path="res://Sprites/Interface/bar_under.png" id="3_t7yvt"]
+[ext_resource type="Texture2D" uid="uid://bvr7in7eey6cb" path="res://Sprites/Interface/bar_over.png" id="4_11not"]
+[ext_resource type="Texture2D" uid="uid://cf2ypr83psjfm" path="res://Sprites/Interface/bar_health.png" id="5_qnyor"]
+[ext_resource type="Texture2D" uid="uid://djtqrhxpxpjeg" path="res://Sprites/Interface/bar_mana.png" id="6_11not"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm3sm"]
+atlas = ExtResource("1_fp5lk")
+region = Rect2(48, 0, 48, 48)
+
+[node name="Arena" type="Node2D" unique_id=513038623]
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1544990733]
+
+[node name="PlayerUI" type="Control" parent="UI" unique_id=479356139]
+custom_minimum_size = Vector2(120, 80)
+layout_mode = 3
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 125.0
+offset_bottom = 85.0
+
+[node name="PlayerPortrait" type="TextureRect" parent="UI/PlayerUI" unique_id=403268341]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_rm3sm")
+
+[node name="PlayerIcon" type="TextureRect" parent="UI/PlayerUI/PlayerPortrait" unique_id=49766651]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.0
+offset_top = -15.0
+offset_right = 15.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_6o3nl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HealthBar" type="TextureProgressBar" parent="UI/PlayerUI" unique_id=533062282]
+custom_minimum_size = Vector2(80, 12)
+layout_mode = 0
+offset_top = 50.0
+offset_right = 80.0
+offset_bottom = 62.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_right = 3
+texture_under = ExtResource("3_t7yvt")
+texture_over = ExtResource("4_11not")
+texture_progress = ExtResource("5_qnyor")
+
+[node name="ManaBar" type="TextureProgressBar" parent="UI/PlayerUI" unique_id=2118940253]
+custom_minimum_size = Vector2(80, 12)
+layout_mode = 0
+offset_top = 64.0
+offset_right = 80.0
+offset_bottom = 76.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+nine_patch_stretch = true
+stretch_margin_left = 3
+stretch_margin_right = 3
+texture_under = ExtResource("3_t7yvt")
+texture_over = ExtResource("4_11not")
+texture_progress = ExtResource("6_11not")
