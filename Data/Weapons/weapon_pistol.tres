@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://st6hmgswhkq1"]
+
+[ext_resource type="Script" uid="uid://bnygd2hlflijc" path="res://Data/Weapons/weapon_data.gd" id="1_5v7y6"]
+[ext_resource type="Texture2D" uid="uid://cqvwy8c5l0aod" path="res://Sprites/Weapons/Tiles/tile_0001.png" id="1_qufyp"]
+
+[resource]
+script = ExtResource("1_5v7y6")
+weapon_name = "Pistol"
+icon = ExtResource("1_qufyp")
+damage = 1.0
+cooldown = 0.4
+mana_cost = 1.0
+spread = 7.0
+bullet_speed = 250.0
+metadata/_custom_type_script = "uid://bnygd2hlflijc"

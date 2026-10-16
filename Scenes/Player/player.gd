@@ -45,7 +45,7 @@ func _input(event: InputEvent) -> void:
 		health_component.take_damage(1)
 
 
-func _on_health_component_on_unit_damaged(amount: float) -> void:
+func _on_health_component_on_unit_damaged(_amount: float) -> void:
 	EventBus.on_player_health_updated.emit(health_component.current_health, data.max_hp)
 
 
@@ -53,5 +53,5 @@ func _on_health_component_on_unit_dead() -> void:
 	queue_free()
 
 
-func _on_health_component_on_unit_healed(amount: float) -> void:
+func _on_health_component_on_unit_healed(_amount: float) -> void:
 	pass
