@@ -43,7 +43,7 @@ radius = 8.0
 [node name="PlayerDog" unique_id=990646189 instance=ExtResource("1_k54n3")]
 data = ExtResource("2_yhbja")
 
-[node name="Visuals" parent="." index="0" unique_id=1462788674]
+[node name="Visuals" parent="." index="1" unique_id=1462788674]
 scale = Vector2(1.25, 1.25)
 
 [node name="Shadow" parent="Visuals" index="0" unique_id=1717373440]
@@ -55,6 +55,6 @@ sprite_frames = SubResource("SpriteFrames_da5b7")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Collision" parent="." index="1" unique_id=272556118]
+[node name="Collision" parent="." index="2" unique_id=272556118]
 position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_j7ddg")

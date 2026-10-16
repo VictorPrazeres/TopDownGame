@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://hkxflsbakp1w"
 Transition="*uid://74vygdsnhulj"
 Global="*uid://5dwwp5mg4n3l"
 Music="*uid://dupkvjg2p7bhb"
+EventBus="*uid://didcc5br1ufuo"
 
 [display]
 

@@ -8,6 +8,11 @@ var direction: Vector2
 
 @onready var visuals: Node2D = $Visuals
 @onready var anim_texture: AnimatedSprite2D = %AnimTexture
+@onready var health_component: HealthComponent = $HealthComponent
+
+
+func _ready() -> void:
+	health_component.init_health(data.max_hp)
 
 
 func _physics_process(_delta: float) -> void:
@@ -33,3 +38,20 @@ func rotate_player() -> void:
 			visuals.scale = Vector2(1.25, 1.25)
 		else:
 			visuals.scale = Vector2(-1.25, 1.25)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_accept"):
+		health_component.take_damage(1)
+
+
+func _on_health_component_on_unit_damaged(amount: float) -> void:
+	EventBus.on_player_health_updated.emit(health_component.current_health, data.max_hp)
+
+
+func _on_health_component_on_unit_dead() -> void:
+	queue_free()
+
+
+func _on_health_component_on_unit_healed(amount: float) -> void:
+	pass
